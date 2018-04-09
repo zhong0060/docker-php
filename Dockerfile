@@ -1,4 +1,4 @@
-FROM php:7.0.27-fpm
+FROM php:5.6.35-fpm
 
 MAINTAINER hteen <i@hteen.cn>
 
