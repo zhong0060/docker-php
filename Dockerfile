@@ -16,11 +16,11 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
 
-RUN git clone https://github.com/laruence/yaf.git /usr/src/php/ext/yaf/
-RUN git clone https://github.com/laruence/yar.git /usr/src/php/ext/yar/
+RUN git clone -b php5 https://github.com/laruence/yaf.git /usr/src/php/ext/yaf/
+RUN git clone -b php5 https://github.com/laruence/yar.git /usr/src/php/ext/yar/
 RUN git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis/
 RUN git clone https://github.com/swoole/swoole-src.git /usr/src/php/ext/swoole/
-RUN git clone https://github.com/msgpack/msgpack-php.git /usr/src/php/ext/msgpack/
+RUN git clone -b php5 https://github.com/msgpack/msgpack-php.git /usr/src/php/ext/msgpack/
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
